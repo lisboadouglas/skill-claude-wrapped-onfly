@@ -4,17 +4,25 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repository Is
 
-This is a **Claude Code skill repository** containing product specifications for two Onfly retrospective products. It holds the design skill (`onfly-retrospective-design`) and all reference materials needed to build the products. The primary language is **Portuguese (Brazilian)**.
+This is a **Claude Code skill repository** for Onfly products. It contains two skills for building interfaces and content. The primary language is **Portuguese (Brazilian)**.
 
-## Repository Structure
+## Skills
 
-- `claude-master-prompt.md` — Slim implementation prompt that invokes the skill and adds architecture/UX/delivery specs not covered by references.
-- `skills/onfly-retrospective-design/SKILL.md` — Skill definition: rules, flow, format, tone, AI patterns, guardrails.
-- `skills/onfly-retrospective-design/references/`:
-  - `screen-playbooks.md` — Screen-by-screen flows for every product x profile combination (source of truth for screens)
-  - `evaluation-criteria.md` — Quality framework for pitch and business value alignment
-  - `mock-data-schema.md` — Data structure for mock data (company, employees, trips, expenses, monthly summaries)
-- `skills/onfly-retrospective-design/references/implementation-prompts.md` — User-facing menu of ready-to-paste prompts (not consumed by the skill during implementation)
+### `onfly-retrospective-design`
+Retrospective experiences for corporate travel. Invoke with `$onfly-retrospective-design`.
+- `SKILL.md` — Rules, flow, tone, AI patterns, guardrails
+- `references/screen-playbooks.md` — Screen flows per product x profile (source of truth)
+- `references/mock-data-schema.md` — Mock data structure for consistency
+- `references/evaluation-criteria.md` — Quality framework for pitch alignment
+- `references/implementation-prompts.md` — User-facing prompt menu (not consumed during implementation)
+- `claude-master-prompt.md` — Slim prompt that invokes the skill with architecture/UX/delivery specs
+
+### `linkedin-feed-publisher`
+Transforms slides/screens into LinkedIn posts and share actions. Invoke with `$linkedin-feed-publisher`.
+- `SKILL.md` — Writing rules for feed, flow, delivery format, guardrails
+- `references/post-playbooks.md` — Post structures by objective (launch, case, learning, behind-the-scenes, hiring)
+- `references/style-guards.md` — Tone, hooks, anti-patterns, hashtag rules
+- `references/share-action.md` — Share button implementation (UX flow, payload, states, fallbacks)
 
 ## Products
 
@@ -35,6 +43,9 @@ Both support 3 viewing modes: gestor (company-wide), colaborador (personal), ges
 - **Visual direction**: premium, editorial, dynamic. Avoid generic SaaS dashboard. Avoid literal Spotify copying.
 - **Responsive**: mobile + desktop
 
-## Using the Skill
+## Using the Skills
 
-Invoke with `$onfly-retrospective-design`. Read only the references you need — `screen-playbooks.md` for screen flows, `evaluation-criteria.md` for pitch alignment, `mock-data-schema.md` for data structure. The skill detects the target project's stack before implementing.
+Each skill detects the target project's tech stack before implementing. Read only the references you need per task.
+
+- `$onfly-retrospective-design` — for retrospective interfaces. Key refs: `screen-playbooks.md` (screens), `mock-data-schema.md` (data), `evaluation-criteria.md` (pitch).
+- `$linkedin-feed-publisher` — for LinkedIn copy or share buttons. Key refs: `post-playbooks.md` (post structures), `style-guards.md` (tone), `share-action.md` (implementation).

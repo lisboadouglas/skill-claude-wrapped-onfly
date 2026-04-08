@@ -1,0 +1,4 @@
+interface:
+  display_name: "LinkedIn Feed Publisher"
+  short_description: "Implemente share no feed do LinkedIn"
+  default_prompt: "Use $linkedin-feed-publisher para implementar a action de compartilhar no feed do LinkedIn a partir de um slide, com copy otimizada e fluxo de UX."
