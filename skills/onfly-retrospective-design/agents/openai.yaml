@@ -1,0 +1,4 @@
+interface:
+  display_name: "Onfly Retrospective Design"
+  short_description: "Estruture Wrappeds e capsulas Onfly"
+  default_prompt: "Use $onfly-retrospective-design para definir telas, narrativa e insights com IA para o Wrapped Onfly ou para a Capsula de Viagens."
